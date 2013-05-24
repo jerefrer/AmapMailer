@@ -1,0 +1,16 @@
+fr:
+  activerecord:
+    models:
+      newsletter: newsletter
+    attributes:
+      newsletter:
+        name: Nom
+        body: Corps
+    errors:
+      models:
+        newsletter:
+          attributes:
+            name:
+              blank: ": Veuillez indiquer un nom pour cet email"
+            body:
+              blank: ": Veuillez indiquer un corps pour cet email"

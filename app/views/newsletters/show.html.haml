@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @newsletter.name
+%p
+  %b Body:
+  = @newsletter.body
+
+= link_to 'Editer', edit_newsletter_path(@newsletter)
+\|
+= link_to 'Retour', newsletters_path
