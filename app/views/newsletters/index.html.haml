@@ -1,19 +1,23 @@
-%h1 Mails
-
-%table
-  %tr
-    %th Nom
-    %th
-    %th
-    %th
-
-  - @newsletters.each do |newsletter|
+- model_class = Newsletter
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize
+%table.table.table-striped
+  %thead
     %tr
-      %td= newsletter.name
-      %td= link_to 'Afficher', newsletter
-      %td= link_to 'Editer', edit_newsletter_path(newsletter)
-      %td= link_to 'Supprimer', newsletter, :method => :delete, :data => { :confirm => 'Êtes-vous sûr ?' }
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:body)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @newsletters.each do |newsletter|
+      %tr
+        %td= link_to newsletter.id, newsletter_path(newsletter)
+        %td= newsletter.name
+        %td= newsletter.body
+        %td=l newsletter.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_newsletter_path(newsletter), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), newsletter_path(newsletter), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
 
-%br
-
-= link_to 'Nouvelle Newsletter', new_newsletter_path
+= link_to t('.new', :default => t("helpers.links.new")), new_newsletter_path, :class => 'btn btn-primary'

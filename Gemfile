@@ -27,6 +27,7 @@ end
 
 gem 'haml-rails'
 gem 'jquery-rails'
+gem "twitter-bootstrap-rails"
 
 gem 'redactor-rails'
 gem "carrierwave"
