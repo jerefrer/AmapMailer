@@ -12,4 +12,8 @@ describe Newsletter do
     Newsletter.new(attributes).should_not be_valid
   end
 
+  it "shouldn't save without at least one category" do
+    attributes = FactoryGirl.attributes_for(:newsletter, :category_ids => [])
+    Newsletter.new(attributes).should_not be_valid
+  end
 end

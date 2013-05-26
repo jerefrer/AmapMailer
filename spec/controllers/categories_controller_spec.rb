@@ -24,7 +24,7 @@ describe CategoriesController do
   # Category. As you add validations to Category, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    FactoryGirl.attributes_for(:category)
   end
 
   # This should return the minimal set of values that should be in the session
@@ -36,6 +36,7 @@ describe CategoriesController do
 
   describe "GET index" do
     it "assigns all categories as @categories" do
+      Category.destroy_all
       category = Category.create! valid_attributes
       get :index, {}, valid_session
       assigns(:categories).should eq([category])

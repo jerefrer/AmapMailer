@@ -5,11 +5,13 @@ describe "newsletters/index" do
     assign(:newsletters, [
       stub_model(Newsletter,
         :name => "Name",
-        :body => "MyText"
+        :body => "MyText",
+        :created_at => Time.now
       ),
       stub_model(Newsletter,
         :name => "Name",
-        :body => "MyText"
+        :body => "MyText",
+        :created_at => Time.now
       )
     ])
   end

@@ -1,5 +1,10 @@
 require 'spec_helper'
 
 describe Category do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "shouldn't save without a name" do
+    attributes = FactoryGirl.attributes_for(:category, :name => nil)
+    Category.new(attributes).should_not be_valid
+  end
+
 end
