@@ -1,5 +1,8 @@
 AmapMailer::Application.routes.draw do
 
+  resources :subscribers
+
+
   resources :categories
 
 
