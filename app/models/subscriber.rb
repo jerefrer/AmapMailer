@@ -1,5 +1,7 @@
 class Subscriber < ActiveRecord::Base
-  attr_accessible :auth_token, :email
+  attr_accessible :auth_token, :email, :category_ids
+
+  has_and_belongs_to_many :categories
 
   validates :email, :presence => true, :uniqueness => true, :format => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
 
