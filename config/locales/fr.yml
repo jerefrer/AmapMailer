@@ -7,3 +7,10 @@ fr:
         name: Nom
         body: Corps
         created_at: Créée le
+      category:
+        name: Nom
+        created_at: Créée le
+      subscriber:
+        email: Email
+        auth_token: Token d'authentification
+        created_at: Créé le
