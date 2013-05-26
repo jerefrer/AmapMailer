@@ -36,6 +36,7 @@ describe NewslettersController do
 
   describe "GET index" do
     it "assigns all newsletters as @newsletters" do
+      Newsletter.destroy_all
       newsletter = Newsletter.create! valid_attributes
       get :index, {}, valid_session
       assigns(:newsletters).should eq([newsletter])
