@@ -3,6 +3,5 @@ class Category < ActiveRecord::Base
 
   has_and_belongs_to_many :newsletters
 
-  validates_presence_of :name
-
+  validates :name, :presence => true, :uniqueness => true
 end

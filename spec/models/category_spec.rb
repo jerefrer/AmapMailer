@@ -7,4 +7,10 @@ describe Category do
     Category.new(attributes).should_not be_valid
   end
 
+  it "shouldn't save if name is already taken" do
+    FactoryGirl.create(:category, :name => "test")
+    attributes = FactoryGirl.attributes_for(:category, :name => "test")
+    Category.new(attributes).should_not be_valid
+  end
+
 end
