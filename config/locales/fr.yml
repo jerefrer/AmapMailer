@@ -14,6 +14,9 @@ fr:
         email: Email
         auth_token: Token d'authentification
         created_at: Créé le
+    errors:
+      newsletters:
+        at_least_one_category: doit contenir au moins une catégorie
     notices:
       category:
         create: Catégorie ajoutée.

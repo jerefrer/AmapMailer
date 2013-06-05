@@ -11,7 +11,7 @@ class Newsletter < ActiveRecord::Base
 private
 
   def at_least_one_category
-    errors.add(:categories, "doit contenir au moins une catégorie") if (category_ids & Category.pluck(:id)).count < 1
+    errors.add(:categories, I18n.t('activerecord.errors.newsletters.at_least_one_category')) if (categories & Category.all).count < 1
   end
 
 end
