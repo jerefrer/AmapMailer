@@ -3,13 +3,13 @@
   %h1=t '.title', :default => model_class.model_name.human
 
 %p
+  %strong= model_class.human_attribute_name(:name) + ':'
+  %br
+  = @subscriber.name
+%p
   %strong= model_class.human_attribute_name(:email) + ':'
   %br
   = @subscriber.email
-%p
-  %strong= model_class.human_attribute_name(:auth_token) + ':'
-  %br
-  = @subscriber.auth_token
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), subscribers_path, :class => 'btn'

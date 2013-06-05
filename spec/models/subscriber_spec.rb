@@ -2,6 +2,11 @@ require 'spec_helper'
 
 describe Subscriber do
 
+  it "should not save without a name" do
+    attributes = FactoryGirl.attributes_for(:subscriber, :name => nil)
+    Subscriber.new(attributes).should_not be_valid
+  end
+
   it "should not save without an email" do
     attributes = FactoryGirl.attributes_for(:subscriber, :email => nil)
     Subscriber.new(attributes).should_not be_valid

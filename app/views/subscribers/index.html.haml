@@ -5,16 +5,16 @@
   %thead
     %tr
       %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
       %th= model_class.human_attribute_name(:email)
-      %th= model_class.human_attribute_name(:auth_token)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @subscribers.each do |subscriber|
       %tr
         %td= link_to subscriber.id, subscriber_path(subscriber)
+        %td= subscriber.name
         %td= subscriber.email
-        %td= subscriber.auth_token
         %td=l subscriber.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_subscriber_path(subscriber), :class => 'btn btn-mini'
