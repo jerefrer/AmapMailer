@@ -14,3 +14,16 @@ fr:
         email: Email
         auth_token: Token d'authentification
         created_at: Créé le
+    notices:
+      category:
+        create: Catégorie ajoutée.
+        update: Catégorie mise-à-jour.
+        destroy: Catégorie supprimée.
+      newsletter:
+        create: Newsletter ajoutée.
+        update: Newsletter mise-à-jour.
+        destroy: Newsletter supprimée.
+      subscriber:
+        create: Abonné ajouté.
+        update: Abonné mis-à-jour.
+        destroy: Abonné supprimé.

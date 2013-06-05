@@ -44,7 +44,7 @@ class SubscribersController < ApplicationController
 
     respond_to do |format|
       if @subscriber.save
-        format.html { redirect_to @subscriber, notice: 'Subscriber was successfully created.' }
+        format.html { redirect_to @subscriber, notice: t('activerecord.notices.subscriber.create') }
         format.json { render json: @subscriber, status: :created, location: @subscriber }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class SubscribersController < ApplicationController
 
     respond_to do |format|
       if @subscriber.update_attributes(params[:subscriber])
-        format.html { redirect_to @subscriber, notice: 'Subscriber was successfully updated.' }
+        format.html { redirect_to @subscriber, notice: t('activerecord.notices.subscriber.update') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +76,7 @@ class SubscribersController < ApplicationController
     @subscriber.destroy
 
     respond_to do |format|
-      format.html { redirect_to subscribers_url }
+      format.html { redirect_to subscribers_url, notice: t('activerecord.notices.subscriber.destroy') }
       format.json { head :no_content }
     end
   end
