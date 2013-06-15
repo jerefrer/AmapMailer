@@ -7,11 +7,12 @@ fr:
     links:
       back: "Retour"
       cancel: "Annuler"
+      edit: "Éditer"
       confirm: "Êtes-vous sûr ?"
       destroy: "Supprimer"
       new: "Nouveau"
     titles:
-      edit: "Editer"
+      edit: "Éditer"
       save: "Enregistrer"
       new: "Nouveau"
       delete: "Supprimer"

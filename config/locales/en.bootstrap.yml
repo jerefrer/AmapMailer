@@ -7,6 +7,7 @@ en:
     links:
       back: "Back"
       cancel: "Cancel"
+      edit: "Edit"
       confirm: "Are you sure?"
       destroy: "Delete"
       new: "New"
