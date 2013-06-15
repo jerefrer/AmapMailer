@@ -4,8 +4,8 @@ Category.destroy_all
 
 FactoryGirl.define do
   factory :newsletter do
-    name "MyString"
-    body "MyText"
+    sequence(:name) { |n| "Newsletter-#{n}" }
+    sequence(:body) { |n| "Body-#{n}" }
     category_ids [FactoryGirl.create(:category).id]
   end
 end
