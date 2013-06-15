@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :subscriber do
-    sequence(:name)  { |n| "Name_#{n}" }
+    sequence(:name)  { |n| "Name-#{n}" }
     sequence(:email) { |n| "foo#{n}@example.com" }
   end
 end
