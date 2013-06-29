@@ -1,10 +1,10 @@
 AmapMailer::Application.routes.draw do
 
-  resources :subscribers
-
-  resources :categories
-
-  resources :newsletters
+  namespace :admin do
+    resources :subscribers
+    resources :categories
+    resources :newsletters
+  end
 
   mount RedactorRails::Engine => '/redactor_rails'
 
