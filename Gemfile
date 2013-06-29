@@ -22,8 +22,14 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
+  gem 'capybara'
+  gem "launchy"
   gem 'factory_girl_rails'
   gem 'jazz_hands'
+end
+
+group :test do
+  gem 'rspec-example_steps'
 end
 
 gem 'haml-rails'
