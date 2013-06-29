@@ -16,4 +16,5 @@ describe Newsletter do
     attributes = FactoryGirl.attributes_for(:newsletter, :category_ids => [])
     Newsletter.new(attributes).should_not be_valid
   end
+
 end
