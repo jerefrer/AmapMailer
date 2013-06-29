@@ -6,8 +6,9 @@ AmapMailer::Application.routes.draw do
     resources :newsletters
   end
 
-  mount RedactorRails::Engine => '/redactor_rails'
+  resources :subscribers, :except => [:index, :show, :edit]
+  get '/subscribers/:id', :to => 'subscribers#edit', :as => 'edit_subscriber'
 
-  root :to => 'newsletters#index'
+  mount RedactorRails::Engine => '/redactor_rails'
 
 end
